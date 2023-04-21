@@ -4,12 +4,14 @@ import { Widgets } from './dbConnectors';
 // const productDatabase = {};
 
 const resolvers = {
-    getProduct: ({id})=>{
-        return new Promise((resolve)=>{
-            Widgets.findById({_id:id}, (err, product)=>{
-                if(err) reject(err)
-                else resolve(product)
-            })
+    getProduct: ({ id }) => {
+        return new Promise(async(resolve) => {
+            try{
+                let data = await Widgets.findById({_id:(id)});
+                resolve(data);
+            }catch (e){
+                reject(e);
+            }
         });
     },
     createProduct: ({input})=>{
@@ -30,7 +32,7 @@ const resolvers = {
                 reject(e);
             }
         });
-    }
+    },
 };
 
 export default resolvers;

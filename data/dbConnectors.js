@@ -10,6 +10,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/widgets',{
 });
 
 const widgetSchema = new mongoose.Schema({
+    
     name: {
         type: String
     },
