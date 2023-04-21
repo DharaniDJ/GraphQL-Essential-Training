@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 // Mongoose connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/widgets',{
+mongoose.connect('mongodb://localhost:27017/widgets',{
     useNewUrlParser: true
 });
 

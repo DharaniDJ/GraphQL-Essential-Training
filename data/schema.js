@@ -21,7 +21,7 @@ const schema = buildSchema(`
     }
 
     type Query {
-        product(id: ID): Product
+        getProduct(id: ID): Product
     }
 
     input StoreInput {
