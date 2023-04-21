@@ -15,6 +15,17 @@ const resolvers = {
         });
     },
 
+    getAllProducts: () => {
+        return new Promise(async(resolve) => {
+            try{
+                let data = await Widgets.find({});
+                resolve(data);
+            }catch (e){
+                reject(e);
+            }
+        });
+    },
+
     createProduct: ({input})=>{
         const newWidget = new Widgets({
             name:input.name,
@@ -54,10 +65,6 @@ const resolvers = {
             }catch (e){
                 reject(e);
             }
-            // Widgets.remove({_id:id},(err)=>{
-            //     if(err) reject(err)
-            //     else resolve("Successfully deleted widget")
-            // });
         });
     },
 };
