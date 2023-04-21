@@ -2,11 +2,10 @@ import mongoose from "mongoose";
 import { Sequelize, DataTypes} from 'sequelize';
 import _ from 'lodash';
 import casual from "casual";
-import { classToInvokable } from "sequelize/types/utils";
 
 // Mongoose connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/widgets',{
+mongoose.connect('mongodb://127.0.0.1:27017/widgets',{
     useNewUrlParser: true
 });
 
