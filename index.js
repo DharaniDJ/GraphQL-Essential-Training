@@ -14,7 +14,11 @@ const root = { product: ()=>{
         "name":"widget",
         "description":"Beautiful widget to use in your garden",
         "price":34.44,
-        'soldout':false
+        "soldout":false,
+        "stores":[
+            {store:"TraderJoes"},
+            {store:"Safeway"}
+        ],
     }
 }};
 
