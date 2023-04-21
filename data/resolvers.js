@@ -1,15 +1,3 @@
-class Product {
-    constructor(id, {name,description,price,soldout,inventory,stores}){
-        this.name=name;
-        this.id=id;
-        this.description=description;
-        this.price=price;
-        this.soldout=soldout;
-        this.inventory=inventory
-        this.stores=stores;
-    }
-}
-
 // basically add new products with my mutations in this one, and eventually we'll use persistence with a database
 const productDatabase = {};
 
