@@ -14,6 +14,7 @@ const resolvers = {
             }
         });
     },
+
     createProduct: ({input})=>{
         const newWidget = new Widgets({
             name:input.name,
@@ -31,6 +32,32 @@ const resolvers = {
             }catch (e){
                 reject(e);
             }
+        });
+    },
+
+    updateProduct: ({input})=>{
+        return new Promise(async(resolve) => {
+            try{
+                let data = await Widgets.findOneAndUpdate({_id:input.id},input,{new:true});
+                resolve(data);
+            }catch (e){
+                reject(e);
+            }
+        });
+    },
+
+    deleteProduct: ({id})=>{
+        return new Promise((resolve) => {
+            try{
+                let data = Widgets.findByIdAndRemove({_id:id});
+                resolve("Successfully deleted widget");
+            }catch (e){
+                reject(e);
+            }
+            // Widgets.remove({_id:id},(err)=>{
+            //     if(err) reject(err)
+            //     else resolve("Successfully deleted widget")
+            // });
         });
     },
 };
